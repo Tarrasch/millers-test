@@ -1,0 +1,31 @@
+---
+  A:
+    b:
+
+  B:
+    b:
+      reflection: yes
+
+  C:
+    p:
+
+  1:
+    p:
+      rotation: 180
+
+  2:
+    q:
+
+  3:
+    p:
+      reflection: yes
+
+  4:
+    p:
+      reflection: yes
+      rotation: 90
+
+  5:
+    p:
+      reflection: yes
+      rotation: 270

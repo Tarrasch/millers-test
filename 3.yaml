@@ -1,0 +1,48 @@
+---
+  A:
+    b_triangle:
+      shape: triangle
+      size: big
+    s_triangle:
+      shape: triangle
+      size: small
+      insideof: {fig: b_triangle }
+
+  B:
+    triangle:
+      size: big
+
+  C:
+    circle:
+      size: big
+    square:
+      size: small
+      insideof: {fig: circle }
+
+  1:
+    b_circle:
+      shape: circle
+      size: big
+    s_circle:
+      shape: circle
+      size: small
+      insideof: {fig: b_circle }
+
+  2:
+    square:
+      size: small
+
+  3:
+    circle:
+      size: big
+    triangle:
+      size: small
+      insideof: {fig: circle }
+
+  4:
+    square:
+      size: big
+
+  5:
+    triangle:
+      size: big

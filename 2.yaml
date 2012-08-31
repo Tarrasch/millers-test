@@ -1,0 +1,40 @@
+---
+  A:
+    dot:
+    triangle:
+    rectangle:
+      inside: { fig: rectangle }
+
+  B:
+    triangle:
+    rectangle:
+      leftof: { fig: rectangle }
+
+  C:
+    dot:
+    boat:
+    z:
+      inside: { fig: boat }
+
+  1:
+    dot:
+    boat:
+    z:
+      inside: { fig: boat }
+
+  2:
+    boat:
+    z:
+      leftof: { fig: boat }
+
+  3:
+    boat:
+    z:
+      inside: { fig: boat }
+
+  4:
+    dot:
+    boat:
+
+  5:
+    z:
