@@ -1,0 +1,287 @@
+attribute is a (slot, filler) pair.
+Syntax:
+«X» represents an object. The name (X) is arbitrary, but is usually written for human
+understanding.
+^foo bar sets the object's variable foo to the value bar
+^foo bar baz sets the object's variable foo to a list containing the values bar and baz
+*/
+// Evidence A
+(«e1»
+^index A
+^num-figures 2
+^figures «e1-f1» «e1-f2»)
+(«e1-f1»
+^index 1
+^evidence «e1»
+^num-attributes 3
+^attributes «e1-f1-a1» «e1-f1-a2» «e1-f1-a3»)
+(«e1-f1-a1»
+^index 1
+^figure «e1-f1»
+^slot shape
+^filler triangle)
+(«e1-f1-a2»
+^index 2
+^figure «e1-f1»
+^slot location
+^filler center)
+(«e1-f1-a3»
+^index 3
+^figure «e1-f1»
+^slot size
+^filler big)
+(«e1-f2»
+^index 2
+^evidence «e1»
+^num-attributes 3
+^attributes «e1-f2-a1» «e1-f2-a2» «e1-f2-a3»)
+(«e1-f2-a1»
+^index 1
+^figure «e1-f2»
+^slot shape
+^filler triangle)
+(«e1-f2-a2»
+^index 2
+^figure «e1-f2»
+^slot location
+^filler inside «e1-f1»)
+(«e1-f2-a3»
+^index 3
+^figure «e1-f2»
+^slot size
+^filler small)
+// Evidence B
+(«e2»
+^index B
+^num-figures 1
+^figures «e2-f1»)
+(«e2-f1»
+^index 1
+^evidence «e2»
+^num-attributes 3
+^attributes «e2-f1-a1» «e2-f1-a2» «e2-f1-a3»)
+(«e2-f1-a1»
+^index 1
+^figure «e2-f1»
+^slot shape
+^filler triangle)
+(«e2-f1-a2»
+^index 2
+^figure «e2-f1»
+^slot location
+^filler center)
+(«e2-f1-a3»
+^index 3
+^figure «e2-f1»
+^slot size
+^filler big)
+// Evidence C
+(«e3»
+^index C
+^num-figures 2
+^figures «e3-f1» «e3-f2»)
+(«e3-f1»
+^index 1
+^evidence «e3»
+^num-attributes 3
+^attributes «e3-f1-a1» «e3-f1-a2» «e3-f1-a3»)
+(«e3-f1-a1»
+^index 1
+^figure «e3-f1»
+^slot shape
+^filler circle)
+(«e3-f1-a2»
+^index 2
+^figure «e3-f1»
+^slot location
+^filler center)
+(«e3-f1-a3»
+^index 3
+^figure «e3-f1»
+^slot size
+^filler big)
+(«e3-f2»
+^index 2
+^evidence «e3»
+^num-attributes 3
+^attributes «e3-f2-a1» «e3-f2-a2» «e3-f2-a3»)
+(«e3-f2-a1»
+^index 1
+^figure «e3-f2»
+^slot shape
+^filler square)
+(«e3-f2-a2»
+^index 2
+^figure «e3-f2»
+^slot location
+^filler inside «e3-f1»)
+(«e3-f2-a3»
+^index 3
+^figure «e3-f2»
+^slot size
+^filler small)
+// Choice 1
+(«c1»
+^index Choice-1
+^num-figures 2
+^figures «c1-f1» «c1-f2»)
+(«c1-f1»
+^index 1
+^choice «c1»
+^num-attributes 3
+^attributes «c1-f1-a1» «c1-f1-a2» «c1-f1-a3»)
+(«c1-f1-a1»
+^index 1
+^figure «c1-f1»
+^slot shape
+^filler circle)
+(«c1-f1-a2»
+^index 2
+^figure «c1-f1»
+^slot location
+^filler center)
+(«c1-f1-a3»
+^index 3
+^figure «c1-f1»
+^slot size
+^filler big)
+(«c1-f2»
+^index 2
+^choice «c1»
+^num-attributes 3
+^attributes «c1-f2-a1» «c1-f2-a2» «c1-f2-a3»)
+(«c1-f2-a1»
+^index 1
+^figure «c1-f2»
+^slot shape
+^filler circle)
+(«c1-f2-a2»
+^index 2
+^figure «c1-f2»
+^slot location
+^filler inside «c1-f1»)
+(«c1-f2-a3»
+^index 3
+^figure «c1-f2»
+^slot size
+^filler small)
+// Choice 2
+(«c2»
+^index Choice-2
+^num-figures 1
+^figures «c2-f1»)
+(«c2-f1»
+^index 1
+^choice «c2»
+^num-attributes 3
+^attributes «c2-f1-a1» «c2-f1-a2» « c2-f1-a3»)
+(«c2-f1-a1»
+^index 1
+^figure «c2-f1»
+^slot shape
+^filler square)
+(«c2-f1-a2»
+^index 2
+^figure «c2-f1»
+^slot location
+^filler center)
+(«c2-f1-a3»
+^index 3
+^figure «c2-f1»
+^slot size
+^filler small)
+// Choice 3
+(«c3»
+^index Choice-3
+^num-figures 2
+^figures «c3-f1» «c3-f2»)
+(«c3-f1»
+^index 1
+^choice «c3»
+^num-attributes 3
+^attributes «c3-f1-a1» «c3-f1-a2» «c3-f1-a3»)
+(«c3-f1-a1»
+^index 1
+^figure «c3-f1»
+^slot shape
+^filler circle)
+(«c3-f1-a2»
+^index 2
+^figure «c3-f1»
+^slot location
+^filler center)
+(«c3-f1-a3»
+^index 3
+^figure «c3-f1»
+^slot size
+^filler big)
+(«c3-f2»
+^index 2
+^choice «c3»
+^num-attributes 3
+^attributes «c3-f2-a1» «c3-f2-a2» «c3-f2-a3»)
+(«c3-f2-a1»
+^index 1
+^figure «c3-f2»
+^slot shape
+^filler triangle)
+(«c3-f2-a2»
+^index 2
+^figure «c3-f2»
+^slot location
+^filler inside «c3-f1»)
+(«c3-f2-a3»
+^index 3
+^figure «c3-f2»
+^slot size
+^filler small)
+// Choice 4
+(«c4»
+^index Choice-4
+^num-figures 1
+^figures «c4-f1»)
+(«c4-f1»
+^index 1
+^choice «c4»
+^num-attributes 3
+^attributes «c4-f1-a1» «c4-f1-a2» «c4-f1-a3»)
+(«c4-f1-a1»
+^index 1
+^figure «c4-f1»
+^slot shape
+^filler square)
+(«c4-f1-a2»
+^index 2
+^figure «c4-f1»
+^slot location
+^filler center)
+(«c4-f1-a3»
+^index 3
+^figure «c4-f1»
+^slot size
+^filler big)
+// Choice 5
+(«c5»
+^index Choice-5
+^num-figures 1
+^figures «c5-f1»)
+(«c5-f1»
+^index 1
+^choice «c5»
+^num-attributes 3
+^attributes «c5-f1-a1» «c5-f1-a2» «c5-f1-a3»)
+(«c5-f1-a1»
+^index 1
+^figure «c5-f1»
+^slot shape
+^filler triangle)
+(«c5-f1-a2»
+^index 2
+^figure «c5-f1»
+^slot location
+^filler center)
+(«c5-f1-a3»
+^index 3
+^figure «c5-f1»
+^slot size
+^filler big)
