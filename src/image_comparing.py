@@ -8,7 +8,6 @@ def compare_images(img1, img2):
   """
   img1 = deepcopy(img1)
   img2 = deepcopy(img2)
-  n = max(len(img1), len(img2))
   while(len(img1) < len(img2)):
     insert_dead(img1, len(img1))
   while(len(img2) < len(img1)):

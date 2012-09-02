@@ -7,7 +7,6 @@ def compare_comparisions(cmp1, cmp2):
   """
   cmp1 = deepcopy(cmp1)
   cmp2 = deepcopy(cmp2)
-  n = max(len(cmp1), len(cmp2))
   while(len(cmp1) < len(cmp2)):
     cmp1 += [[]]
   while(len(cmp2) < len(cmp1)):
@@ -16,12 +15,12 @@ def compare_comparisions(cmp1, cmp2):
     permutations(cmp2)))
 
 def aux_compare_comparision(cmp1, cmp2):
-  return sum ([
+  return (sum ([
     sum ([
       delta(*a[prop]) != delta(*b[prop])
     for prop in set(a.keys()) & set(b.keys())]) +
       len(set(a.keys()) ^ set(b.keys()))
-  for a, b in izip(cmp1,cmp2)])
+  for a, b in izip(cmp1,cmp2)]), cmp1, cmp2)
 
 def delta(a, b):
   return "unchanged" if a == b else "%s-went-%s" % (a, b)
