@@ -18,7 +18,7 @@ def check_image(image):
   Part of check tree, checking the image parts. Return the modified
   image.
   """
-  return {k: check_subfigure(v, k, image.keys()) for k, v in image.items()}
+  return [(k, check_subfigure(v, k, image.keys())) for k, v in image.items()]
 
 def check_subfigure(subfigure, id, ids):
   if subfigure == None:
