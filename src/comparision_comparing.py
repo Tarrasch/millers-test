@@ -15,12 +15,15 @@ def compare_comparisions(cmp1, cmp2):
   return imap(aux_compare_comparision, repeat(cmp1), repeat(cmp2), permutations(range(n)))
 
 def aux_compare_comparision(cmp1, cmp2, ixs):
+  def ixCmps(ij):
+    i, j = ij
+    return cmp1[i], cmp2[j]
   return sum ([
     sum ([
-      delta(*cmp1[i][prop]) != delta(*cmp2[j][prop])
-    for prop in set(cmp1[i].keys()) & set(cmp2[j].keys())]) +
-      len(set(cmp1[i].keys()) ^ set(cmp2[j].keys()))
-  for i, j in enumerate(ixs)])
+      delta(*a[prop]) != delta(*b[prop])
+    for prop in set(a.keys()) & set(b.keys())]) +
+      len(set(a.keys()) ^ set(b.keys()))
+  for a, b in map(ixCmps, enumerate(ixs))])
 
 def delta(a, b):
   return "unchanged" if a == b else "%s-went-%s" % (a, b)

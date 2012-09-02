@@ -24,17 +24,19 @@ def aux_compare_image(img1, img2, ixs):
 
   @param ixs: The asociations
   """
-# TODO: Implement fig-lookup
+  def ixCmps(ij):
+    i, j = ij
+    return img1[i][1], img2[j][1]
   def resolve(pair, img_id):
     if pair == None: return None
     return {
       'val': pair[1],
-      'fig': "fig-" + str(pair[1]) # TODO: implement
+      'fig': "fig-" + str(pair[1]) # TODO: implement fig lookup
     }[pair[0]]
   return [
     {
       prop:
-        (resolve(img1[i][1].get(prop), 0), resolve(img2[j][1].get(prop), 1))
-    for prop in set(img1[i][1].keys() + img2[j][1].keys())}
-  for i, j in enumerate(ixs)]
+        (resolve(a.get(prop), 0), resolve(b.get(prop), 1))
+    for prop in set(a.keys() + b.keys())}
+  for a, b in map(ixCmps, enumerate(ixs))]
 
