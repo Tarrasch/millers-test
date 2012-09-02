@@ -12,7 +12,8 @@ def compare_images(img1, img2):
     insert_dead(img1, len(img1))
   while(len(img2) < len(img1)):
     insert_dead(img2, len(img2))
-  return imap(aux_compare_image, repeat(img1), permutations(img2))
+  return imap(aux_compare_image, *izip(*product(permutations(img1),
+    permutations(img2))))
 
 def insert_dead(img, id_helper):
   img += [("dead_" + str(id_helper), { "shape": ["val", "dead"] })]
