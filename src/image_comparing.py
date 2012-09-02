@@ -15,8 +15,9 @@ def compare_images(img1, img2):
   return imap(aux_compare_image, repeat(img1), repeat(img2), permutations(range(n)))
 
 def insert_dead(img, id_helper):
-  subfigure = { "shape": "dead" }
-  img["dead_" + str(id_helper)] = subfigure
+  print img
+  img += [("dead_" + str(id_helper), { "shape": ["val", "dead"] })]
+  print img
 
 def aux_compare_image(img1, img2, ixs):
   """
