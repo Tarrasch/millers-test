@@ -3,12 +3,12 @@
     dot:
     triangle:
     rectangle:
-      inside: [ fig, rectangle ]
+      inside: [ fig, triangle ]
 
   B:
     triangle:
     rectangle:
-      leftof: [ fig, rectangle ]
+      leftof: [ fig, triangle ]
 
   C:
     dot:
