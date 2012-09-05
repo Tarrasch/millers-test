@@ -1,6 +1,7 @@
 ---
   A:
     dot:
+      position: top
     triangle:
     rectangle:
       inside: [ fig, triangle ]
@@ -12,12 +13,14 @@
 
   C:
     dot:
+      position: right
     boat:
     z:
       inside: [ fig, boat ]
 
   1:
     dot:
+      position: middle
     boat:
     z:
       inside: [ fig, boat ]
@@ -34,6 +37,7 @@
 
   4:
     dot:
+      position: right
     boat:
 
   5:
