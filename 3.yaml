@@ -6,7 +6,6 @@
     s_triangle:
       shape: triangle
       size: small
-      insideof: [ fig, b_triangle ]
 
   B:
     triangle:
@@ -17,7 +16,6 @@
       size: big
     square:
       size: small
-      insideof: [ fig, circle ]
 
   1:
     b_circle:
@@ -26,7 +24,6 @@
     s_circle:
       shape: circle
       size: small
-      insideof: [ fig, b_circle ]
 
   2:
     square:
@@ -37,7 +34,6 @@
       size: big
     triangle:
       size: small
-      insideof: [ fig, circle ]
 
   4:
     square:
