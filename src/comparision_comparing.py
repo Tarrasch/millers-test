@@ -11,7 +11,7 @@ def compare_comparisions(cmp1, cmp2):
     cmp1 += [[]]
   while(len(cmp2) < len(cmp1)):
     cmp2 += [[]]
-  return aux_compare_comparision(cmp1, cmp2)
+  return min(imap(aux_compare_comparision, repeat(cmp1), permutations(cmp2)))
 
 def aux_compare_comparision(cmp1, cmp2):
   return (sum ([

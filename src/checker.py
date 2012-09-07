@@ -25,13 +25,4 @@ def check_subfigure(subfigure, id, ids):
     subfigure = {}
   if "shape" not in subfigure:
     subfigure["shape"] = id
-  return {k: check_property(v, ids) for k, v in subfigure.items()}
-
-def check_property(prop, ids):
-  if type(prop) is not list:
-    prop = [ "val", prop ]
-  if prop[0] == "fig":
-    assert prop[1] in ids
-  assert re.match(r"^(fig|val)$", prop[0])
-  assert len(prop) == 2
-  return prop
+  return subfigure
