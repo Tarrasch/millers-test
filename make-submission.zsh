@@ -25,12 +25,13 @@ mkdir $s
 rm submission.zip
 
 # create and copy stuff over
-pandoc README.markdown -o "README.pdf"
-cp README.markdown "$s/$npid.pdf"
+pandoc README.markdown -o "$s/$npid.pdf"
 cp -r src $s/src
 cp main.py $s/$npid.py
 mkdir $s/reps
-mapl "cp \$1 $s/reps/${id}-\${\$1/yaml/txt}" ?.yaml
+mapl "cp \$1 $s/reps/${id}-\${1/yaml/txt}" ?.yaml
+cp "big.yaml" "$s/reps/performence.txt"
+cp "subtraction-test.yaml" "$s/reps/subtraction-test.txt"
 eachl "rm $s/src/.*.\$1" swp swo
 rm $s/src/*.pyc
 
