@@ -10,20 +10,29 @@
 #         If your project is written in Python, this should be (yourfirstname)(yourlastname)_Project_1.py.
 #     It is fine to include other folders in the .zip file if necessary (for example, a lib folder that the .jar file accesses) so long as the above two folders and two files are present.
 
+. ~/.zshrc
+
+# init vars
 id=1
 pid="Project_$id"
 name="ArashRouhani"
 npid="${name}_${pid}"
 s="submission"
+
+# fresh dir, no zip
 rm -rf $s
 mkdir $s
+rm submission.zip
 
-pandoc README.markdown -t "$s/$npid.pdf"
-cp src $s/src
+# create and copy stuff over
+pandoc README.markdown -o "README.pdf"
+cp README.markdown "$s/$npid.pdf"
+cp -r src $s/src
 cp main.py $s/$npid.py
 mkdir $s/reps
-mapl "cp \$1 $s/reps/${id}-\$({\$1/yaml/txt})" ?.yaml
-rm $s/**/*.{pyc,swp,swo}
+mapl "cp \$1 $s/reps/${id}-\${\$1/yaml/txt}" ?.yaml
+eachl "rm $s/src/.*.\$1" swp swo
+rm $s/src/*.pyc
 
 zip -r submission $s/*
 
