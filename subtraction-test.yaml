@@ -1,0 +1,39 @@
+---
+  A:
+    dot:
+      rotatation: 100
+
+  B:
+    dot:
+      rotatation: 120
+
+  C:
+    toad:
+      rotatation: 20
+
+  1:
+    toad:
+      rotatation: 40
+
+  2:
+    toad:
+      rotatation: 120
+
+# Ok we dont care about the rest
+  3:
+    boat:
+      position: rightish
+    z:
+      position: rightish
+
+  4:
+    dot:
+      position: right
+    boat:
+      position: rightish
+
+  5:
+    z:
+      position: rightish
+
+
