@@ -6,8 +6,8 @@
 
 I'm given 3 *images*, each containing 8 *figures*, and a figure usually
 contains 1-3 *subfigures*, like a circle or a rectangle. Each subfigure
-contains *properties* with set *values*. It should be clear in my what
-are properties and values in my representation.
+contains *properties* with assigned *values*. It should be clear in my
+what are properties and values in my representation.
 
 A *figure comparison* compares two figures like A and B, but a
 *comparison comparison* compares two figure comparisons.
