@@ -27,8 +27,8 @@ I use the human readable `.yaml` format since that gets parsed to a
 python value using standard libraries. `.yaml` is inherently
 hierarchical and I've taken that to my advantage. Furthermore I try to
 follow the DRY principles in my representation, so if the shape-property
-of a subfigure is not set, then it is automatically set to the id of a
-subfigure.
+of a subfigure is not set, then it is automatically set to the id of
+the subfigure.
 
 ## Algorithm
 
@@ -72,16 +72,16 @@ mix and match the figures and subfigures in all possible ways, and rank
 each figure comparison (say A to B) by how good one could match it with
 the other figure comparison (say C to 4). My algorithm tries everything,
 so it should never miss a correct solution, as long as it can compare
-the values of the subfigures properties in a good way. However, my
-program doesn't look for patterns between subfigures, so something has
-to be done later for Project 2 figure 2.
+the values of the subfigures properties in a good way.
+
+### Comparison between two subfigures' common property
 
 So if we compare AB to C4, we look at the before-after values of AB and
 see if we can match up them with before-after values of C4. If a circle
 turned to a rectangle from A to B, we have a before-after value of
 `circle-becomes-rectangle` in our AB comparison. When we do a
-comparison comparison between AB and C4, a matching before-after value
-is looked after in C4.
+comparison comparison between AB and C4, a before-after value
+that is similar is looked after in C4.
 
 ## Experiments
 
@@ -107,7 +107,7 @@ realize that you rotate by 20 degrees.  See
 
 ## Installation and running the program
 
-    python ArashRouhani_Project_1.py
+      $ python ArashRouhani_Project_1.py
 
 Works for me. In the unlikely case that you don't have pyyaml, I've
 included the lib in the zip. If that is not working because you have
