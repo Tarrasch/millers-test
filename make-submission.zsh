@@ -32,6 +32,7 @@ mkdir $s/reps
 mapl "cp \$1 $s/reps/${id}-\${1/yaml/txt}" ?.yaml
 cp "big.yaml" "$s/reps/performence.txt"
 cp "subtraction-test.yaml" "$s/reps/subtraction-test.txt"
+cp -r yaml $s
 eachl "rm $s/src/.*.\$1" swp swo
 rm $s/src/*.pyc
 
