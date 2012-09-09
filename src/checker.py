@@ -2,11 +2,8 @@ import re
 
 def check_tree(tree):
   """
-  Take a tree, add missing 'shape' attributes, expand upon the syntactic
-  suger sugar by turning C{123} to C{val: 123} and check that all figure
-  values exists.
-
-  This method also checks that the correct figures are present
+  Take a tree, add missing 'shape' attributes check that the correct
+  figures are present
 
   @return: A modified tree
   """
