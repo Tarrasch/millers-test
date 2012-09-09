@@ -1,4 +1,3 @@
-import yaml
 import os.path
 from src.parser import parse
 from src.solver import solve
