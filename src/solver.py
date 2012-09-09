@@ -1,6 +1,6 @@
 import operator
 from itertools import *
-from src.image_comparing import *
+from src.figure_comparing import *
 from src.comparision_comparing import *
 import sys
 
@@ -8,10 +8,10 @@ def solve(tree):
   return min(solve_verbose(tree), key=operator.itemgetter(1))[0]
 
 def solve_verbose(tree):
-  def cmp_img(a, b):
-    return compare_images(tree[a], tree[b])
-  cmpABs = list(cmp_img("A", "B"))
-  candidatess = list(imap(cmp_img, repeat("C"), range(1,6)))
+  def cmp_fig(a, b):
+    return compare_figures(tree[a], tree[b])
+  cmpABs = list(cmp_fig("A", "B"))
+  candidatess = list(imap(cmp_fig, repeat("C"), range(1,6)))
   return make_comparisions(cmpABs, candidatess)
 
 def make_comparisions(cmpABs, candidatess):

@@ -5,16 +5,16 @@
 ## Terminology
 
 I'm given 3 *images*, each containing 8 *figures*, and a figure contains
-usually 1-3 *subfigures*, like the circle or the rectangle. Each
-subfigure then contains *properties* with associated *values*. It is
-obvious in my representations what are properties and values.
+usually 1-3 *subfigures*, like a circle or the rectangle. Each
+subfigure then contains *properties* with associated *values*. It should
+be clear in my what are properties and values in my representation.
 
-An *image comparison* can compare two images like A and B, but a
-*comparison comparison* compares to image compassions.
+An *figure comparison* can compare two figures like A and B, but a
+*comparison comparison* compares to figure comparisons.
 
 ## Format of representations
 
-Properties of the images are only described from each subfigures
+Properties of the figures are only described from each subfigures
 perspective, that is I have no list of properties like "circle is left
 of triangle", rather, every property is owned by one of the subfigures,
 so the circle would have a property like `position=left`.  The
@@ -25,7 +25,7 @@ should qualify for the extra 10% bonus.
 
 I use the human readable `.yaml` format since that easily gets parsed to
 a python value. `.yaml` is inherently hierarchical and I've taken that
-to my advantage. Furthermore I try to follow the DRY principles in myrepresentation,
+to my advantage. Furthermore I try to follow the DRY principles in my representation,
 so if the shape-property of a subfigure is not set, then it is
 automatically set to the id of a subfigure.
 
@@ -43,11 +43,12 @@ A step-by-step view on my algorithm can look like this:
   3. `res_x = compare_diffs(diff_AB, diff_Cx)`
   4. `ans = x` where `res_x` is minimal
 
-Here `compare_imgs` takes two images and returns a image comparison
-of the two images. In my implementation, a image comparison is a list
-of all the ways to match up the different subfigures of the two images,
+Here `compare_imgs` takes two figures and returns a figure comparison
+of the two figures. In my implementation, a figure comparison is a list
+of all the ways to match up the different subfigures of the two figures,
 to capture all combinations can be done in `n!` ways,
-where `n` is the number of subfigures, for simplicity we assume all images
+where `n` is the number of subfigures, for simplicity we assume all
+figures
 have the same number of subfigures, if that would not be the case, we just
 fill up with "dead" subfigures.
 
@@ -68,15 +69,15 @@ O(n!^2^) but my naive implementation is O(n!^3^).
 
 It should be clear from my complexity analysis that I basically try to
 mix and match the figures and subfigures in all possible ways, and rank
-each image comparison (say A to B) by how good one could match it with
-the other image comparison (say C to 4). This solution tries
+each figure comparison (say A to B) by how good one could match it with
+the other figure comparison (say C to 4). My algorithm tries
 everything, so it should never miss a correct solution, as long as it can
-compare the values of the images properties in a good way.
+compare the values of the figures properties in a good way.
 
 So if we compare AB to C4, we look at the before-after values of AB and
 see if we can match up them with before-after values of C4. If a circle
 turned to a rectangle from A to B, we have a before-after value of
-`circle-becomes-rectangle` in our AB image comparison. When we do a
+`circle-becomes-rectangle` in our AB comparison. When we do a
 comparison comparison between AB and C4, a matching before-after value
 is looked after in C4.
 
@@ -85,7 +86,7 @@ is looked after in C4.
 I also did some simple experiments, one for performance and one for
 intelligence.
 
-### Performence on my physical machine
+### Performance on my physical machine
 
 I ran a test where n=4 and it took 14 seconds. Please see
 `reps/performence.txt` for the representation used.

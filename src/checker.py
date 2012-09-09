@@ -6,19 +6,19 @@ def check_tree(tree):
   suger sugar by turning C{123} to C{val: 123} and check that all figure
   values exists.
 
-  This method also checks that the correct images are present
+  This method also checks that the correct figures are present
 
   @return: A modified tree
   """
   assert sorted(tree) == [1,2,3,4,5,'A','B','C']
-  return {k: check_image(v) for k, v in tree.items()}
+  return {k: check_figure(v) for k, v in tree.items()}
 
-def check_image(image):
+def check_figure(figure):
   """
-  Part of check tree, checking the image parts. Return the modified
-  image.
+  Part of check tree, checking the figure parts. Return the modified
+  figure.
   """
-  return [(k, check_subfigure(v, k, image.keys())) for k, v in image.items()]
+  return [(k, check_subfigure(v, k, figure.keys())) for k, v in figure.items()]
 
 def check_subfigure(subfigure, id, ids):
   if subfigure == None:

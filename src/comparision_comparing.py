@@ -3,7 +3,7 @@ from itertools import *
 
 def compare_comparisions(cmp1, cmp2):
   """
-  Compare two comparisions, that is, compare two comparisions of two images
+  Compare two comparisons, that is, compare two comparisons of two figures
   """
   cmp1 = deepcopy(cmp1)
   cmp2 = deepcopy(cmp2)
@@ -26,7 +26,7 @@ def delta(a, b):
     return "unchanged"
   elif b == "dead":
     return "rhs died" # We assume we are talking about shapes.
-                      # I added this so example3 passes without penalty.
+                      # I added this so example 3 passes without penalty.
   elif type(a) == type(b) and "__sub__" in dir(a):
     return a - b # Can be used when detecting "rotation by X degrees"
   else:
