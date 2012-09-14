@@ -15,9 +15,9 @@ def check_figure(figure):
   Part of check tree, checking the figure parts. Return the modified
   figure.
   """
-  return [(k, check_subfigure(v, k, figure.keys())) for k, v in figure.items()]
+  return [(k, check_subfigure(v, k)) for k, v in figure.items()]
 
-def check_subfigure(subfigure, id, ids):
+def check_subfigure(subfigure, id):
   if subfigure == None:
     subfigure = {}
   if "shape" not in subfigure:
