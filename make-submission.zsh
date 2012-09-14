@@ -25,6 +25,7 @@ cp "subtraction-test.yaml" "$s/reps/subtraction-test.txt"
 cp -r yaml $s
 eachl "rm $s/src/.*.\$1" swp swo
 rm $s/src/*.pyc
+rm $s/yaml/*.pyc
 
 zip -r submission $s/*
 
