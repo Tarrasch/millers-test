@@ -1,0 +1,43 @@
+---
+  A:
+    b_triangle:
+      shape: triangle
+      size: big
+    s_triangle:
+      shape: triangle
+      size: small
+
+  B:
+    triangle:
+      size: big
+
+  C:
+    circle:
+      size: big
+    square:
+      size: small
+
+  1:
+    circle:
+      size: big
+    square:
+      size: small
+
+  2:
+    square:
+      size: small
+
+  3:
+    circle:
+      size: big
+    triangle:
+      size: small
+
+  4:
+    circle:
+      size: big
+
+  5:
+    triangle:
+      size: big
+
