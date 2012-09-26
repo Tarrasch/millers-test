@@ -8,7 +8,7 @@ def check_tree(tree):
   @return: A modified tree
   """
   assert sorted(tree) == [1,2,3,4,5,'A','B','C']
-  return {k: check_figure(v) for k, v in tree.items()}
+  return dict((k, check_figure(v)) for (k, v) in tree.items())
 
 def check_figure(figure):
   """

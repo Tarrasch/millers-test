@@ -24,10 +24,10 @@ def aux_compare_figure(fig1, fig2):
   Knowing means that we assume the 1-to-1, 2-to-2 relationship
   """
   return [
-    {
-      prop:
-        (resolve(a, prop), resolve(b, prop))
-    for prop in set(a[1].keys() + b[1].keys())}
+    dict(
+      (prop,
+        (resolve(a, prop), resolve(b, prop)))
+    for prop in set(a[1].keys() + b[1].keys()))
   for a, b in izip(fig1,fig2)]
 
 def resolve(subfig, prop):
